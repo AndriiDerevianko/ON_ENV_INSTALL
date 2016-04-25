@@ -1,0 +1,60 @@
+{
+  "jpsType": "install",
+  "application": {
+    "name": "Docker Birthday Tutorial",
+    "homepage": "http://jelastic.com/",
+    "description": "Example Voting App",
+    "env": {
+      "topology": {
+        "nodes": [
+          {
+            "nodeType": "docker",
+            "flexibleCloudlets": 2,
+            "nodeGroup": "cp",
+            "docker": {
+              "image": "manomarks/examplevotingapp_voting-app:latest",
+              "links": "nosqldb:redis"
+            }
+          },
+          {
+            "nodeType": "docker",
+            "flexibleCloudlets": 2,
+            "nodeGroup": "result",
+            "docker": {
+              "image": "manomarks/examplevotingapp_result-app:latest",
+              "links": "sqldb:db"
+            }
+          },
+          {
+            "nodeType": "docker",
+            "flexibleCloudlets": 2,
+            "nodeGroup": "worker",
+            "docker": {
+              "image": "manomarks/worker:latest",
+              "links": [
+                "sqldb:db",
+                "nosqldb:redis"
+              ]
+            }
+          },
+          {
+            "nodeType": "docker",
+            "flexibleCloudlets": 4,
+            "nodeGroup": "nosqldb",
+            "docker": {
+              "image": "redis:alpine"
+            }
+          },
+          {
+            "nodeType": "docker",
+            "flexibleCloudlets": 4,
+            "nodeGroup": "sqldb",
+            "docker": {
+              "image": "postgres:9.4"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
