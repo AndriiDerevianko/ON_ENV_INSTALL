@@ -1,7 +1,7 @@
 # Jelastic Docker Birthday Tutorial Voting App Installation Package 
 
 This repository provides [Docker Birthday Tutorial Voting App](http://jelastic.com/) JPS-based installation package for Jelastic Platform.
-[![GET IT HOSTED](https://raw.githubusercontent.com/JelasticJPS/jelastic-docker-birthday/master/images/getithosted.png)](http://go.jelastic.com/test?hoster-select=1&theme=modern&app=https://raw.githubusercontent.com/JelasticJPS/jelastic-docker-birthday/master/docker-birthday-voting-app-test.json)
+
 
 **jelastic-docker-birthday** is Example Voting App. Docker Birthday Tutorial.
 
