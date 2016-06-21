@@ -8,7 +8,7 @@ This package is designed to deploy Voting App environment which represents an ex
 
 ### Environment Topology
 
-![Joomla Topology](https://docs.google.com/drawings/d/1b4iqUgngApIIPujniWqT_dr4WCQbHDA3fUC3_odcfKg/pub?w=448&h=284)
+![Docker Birthday Tutorial Voting App Topology](https://docs.google.com/drawings/d/1b4iqUgngApIIPujniWqT_dr4WCQbHDA3fUC3_odcfKg/pub?w=448&h=284)
 
 ### Specifics
 
