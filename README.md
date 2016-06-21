@@ -13,7 +13,7 @@ This package is designed to deploy Voting App environment which represents an ex
 ### Specifics
 
 Layer                |     Image          | Number of CTs <br/> by default | Cloudlets per CT <br/> (reserved/dynamic) | Options
--------------------- | :----------------: | :----------------------------: | :---------------------------------------: | :-----:
+-------------------- | :---------------- | :----------------------------: | :---------------------------------------: | :-----:
 AS                   | manomarks/examplevotingapp_voting-app:latest |       1                        |           1 / 2                          | links with DB redis
 DB                   |    postgres:9.4      |       1                        |           1 / 4                           | -
 DB                   |    redis:alpine      |       1                        |           1 / 4                           | -
