@@ -1,59 +1,31 @@
-# Jelastic Docker Birthday Tutorial Voting App Installation Package 
+[![Docker Birthday Tutorial Voting App](../../raw/master/images/postaddon.png)](../../../jelastic-docker-birthday)
+## Docker Birthday Tutorial Voting App
 
-This repository provides [Docker Birthday Tutorial Voting App](http://jelastic.com/) JPS-based installation package for Jelastic Platform.
+The JPS package deploys Voting App that initially contains 1 application server, 2 database containers and 2 extra containers.
 
+### Highlights
+This package is designed to deploy Voting App environment which represents an example of dockers using. open source and free file cloud storage. It can be easily used for data sharing and synchronization, as well as just for storing documents.
 
-**jelastic-docker-birthday** is Example Voting App. Docker Birthday Tutorial.
+### Environment Topology
 
-**Engine**: docker
+![Joomla Topology](https://docs.google.com/drawings/d/1b4iqUgngApIIPujniWqT_dr4WCQbHDA3fUC3_odcfKg/pub?w=448&h=284)
 
-**Environment topology**:
+### Specifics
 
-1. 
-   - node type: docker
-   - count: 1
-   - flexibleCloudlets: 2
-   - nodeGroup: cp
-   - docker: 
-     - image: manomarks/examplevotingapp_voting-app:latest
-     - links: nosqldb:redis
-2. 
-   - node type: docker
-   - count: 1
-   - flexibleCloudlets: 2
-   - nodeGroup: result
-   - docker: 
-     - image: manomarks/examplevotingapp_result-app:latest
-     - links: sqldb:db
-3. 
-   - node type: docker
-   - count: 1
-   - flexibleCloudlets: 2
-   - nodeGroup: worker
-   - docker: 
-     - image: manomarks/worker:latest
-     - links: 
-        - sqldb:db
-        - nosqldb:redis
-4. 
-   - node type: docker
-   - count: 1
-   - flexibleCloudlets: 4
-   - nodeGroup: nosqldb
-   - docker: 
-     - image: redis:alpine
-5. 
-   - node type: docker
-   - count: 1
-   - flexibleCloudlets: 4
-   - nodeGroup: sqldb
-   - docker: 
-     - image: postgres:9.4
- 
- 
-### What it can be used for?
-You can use this manifest as example
+Layer                |     Image          | Number of CTs <br/> by default | Cloudlets per CT <br/> (reserved/dynamic) | Options
+-------------------- | :----------------: | :----------------------------: | :---------------------------------------: | :-----:
+AS                   | manomarks/examplevotingapp_voting-app:latest |       1                        |           1 / 2                          | links with DB redis
+DB                   |    postgres:9.4      |       1                        |           1 / 4                           | -
+DB                   |    redis:alpine      |       1                        |           1 / 4                           | -
+Extra (result)                   |    manomarks/examplevotingapp_result-app:latest      |       1                        |           1 / 2                           | links with DB postgres
+Extra (worker)                   |   manomarks/worker:latest     |       1                        |           1 / 2                           | links with DB postgres and  DB redis
 
+* AS - Application server 
+* DB - Database
+* Extra - Extra Container (Data) 
+* CT - Container
+
+**Postrgres Database**: 9.4
 
 ### Deployment
 
