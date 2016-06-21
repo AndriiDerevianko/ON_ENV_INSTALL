@@ -4,7 +4,7 @@
 The JPS package deploys Voting App that initially contains 1 application server, 2 database containers and 2 extra containers.
 
 ### Highlights
-This package is designed to deploy Voting App environment which represents an example of dockers using. open source and free file cloud storage. It can be easily used for data sharing and synchronization, as well as just for storing documents.
+This package is designed to deploy Voting App environment which represents an example of dockers using.
 
 ### Environment Topology
 
