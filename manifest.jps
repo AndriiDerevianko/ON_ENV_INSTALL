@@ -1,5 +1,6 @@
 {
   "jpsType": "install",
+  "jpsVersion": "0.8",
   "application": {
     "name": "Docker Birthday Tutorial",
     "homepage": "http://jelastic.com/",
@@ -8,8 +9,7 @@
       "topology": {
         "nodes": [
           {
-            "nodeType": "docker",
-            "flexibleCloudlets": 2,
+            "cloudlets": 2,
             "nodeGroup": "cp",
             "docker": {
               "image": "manomarks/examplevotingapp_voting-app:latest",
@@ -17,8 +17,7 @@
             }
           },
           {
-            "nodeType": "docker",
-            "flexibleCloudlets": 2,
+            "cloudlets": 2,
             "nodeGroup": "result",
             "docker": {
               "image": "manomarks/examplevotingapp_result-app:latest",
@@ -26,8 +25,7 @@
             }
           },
           {
-            "nodeType": "docker",
-            "flexibleCloudlets": 2,
+            "cloudlets": 2,
             "nodeGroup": "worker",
             "docker": {
               "image": "manomarks/worker:latest",
@@ -38,16 +36,14 @@
             }
           },
           {
-            "nodeType": "docker",
-            "flexibleCloudlets": 4,
+            "cloudlets": 2,
             "nodeGroup": "nosqldb",
             "docker": {
               "image": "redis:alpine"
             }
           },
           {
-            "nodeType": "docker",
-            "flexibleCloudlets": 4,
+            "cloudlets": 4,
             "nodeGroup": "sqldb",
             "docker": {
               "image": "postgres:9.4"
